@@ -15,14 +15,14 @@ var fight = function() {
 
   var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
 
-//subtract 'playerAttack' value from 'enemyHealth' value and use result.
+  if (promptFight === "fight" || promptFight === "FIGHT") {
+    //subtract 'playerAttack' value from 'enemyHealth' value and use result.
 enemyHealth = enemyHealth - playerAttack;
 //log result to console so we know it happened.
 console.log(
   playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
 );
 //subtract 'enenemyAttack' value from 'playerHealth' and use result.
-
 // check enemy health
 if (enemyHealth <= 0) {
   window.alert(enemyName + " has died!");
@@ -43,12 +43,17 @@ console.log(
 if (playerHealth <= 0) {
   window.alert(playerName + " has died!");
 
-}
-else {
+} else {
   window.alert(playerName + " still has " + playerHealth + " health left.");
 
 }
-
+//if player choses to skip
+  } else if (promptFight === "skip" || promptFight === "SKIP") {
+    window.alert(playerName + "has chosen to skip the fight!");
+  } else {
+    window.alert("You need to choose a valid option. Try again stinky!")
+  }
+  
 };
 // function declaration is when you create a function using the key word first.
 
